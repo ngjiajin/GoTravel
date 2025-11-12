@@ -2,18 +2,15 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- ✅ Mobile responsive -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
   <title>GoTravel</title>
 
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- jQuery and jQuery Mobile -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
@@ -24,26 +21,30 @@
 
 <body>
 
-  <!-- ==================== LOGIN PAGE ==================== -->
-  <div data-role="page" id="login">
-    <div data-role="header" class="bg-primary text-white">
-      <h1>GoTravel Login</h1>
-    </div>
-
-    <div data-role="content" class="p-4">
-      <form id="loginForm">
-        <div class="mb-3">
-          <label for="username">Username</label>
-          <input type="text" id="username" class="form-control" placeholder="Enter username">
+<!-- ==================== LOGIN PAGE ==================== -->
+<div data-role="page" id="login">
+  <div data-role="content" class="d-flex justify-content-center align-items-center vh-100" style="background-color: #FFD6B9;">
+    <div class="card shadow" style="width: 320px; background-color: #f76A6A;">
+      <div class="card-body">
+        <h4 class="text-center mb-4">Login</h4>
+        <form id="loginForm">
+          <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" id="username" class="form-control" placeholder="Enter username">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" id="password" class="form-control" placeholder="Enter password">
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+        <div class="text-center mt-3">
+          <small>Don’t have an account? <a href="#">Register</a></small>
         </div>
-        <div class="mb-3">
-          <label for="password">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="Enter password">
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Login</button>
-      </form>
+      </div>
     </div>
   </div>
+</div>
 
   <!-- ==================== HOME PAGE ==================== -->
   <div data-role="page" id="home">
@@ -52,7 +53,7 @@
     </div>
 
     <div data-role="content" class="text-center mt-4">
-      <p>Welcome to <strong>GoTravel</strong>! Explore destinations and book your next trip.</p>
+      <p>Welcome to <strong>GoTravel</strong>! Explore anywhere, anytime.book your tickets here.</p>
       <a href="#gallery" class="btn btn-info w-75 my-2" data-transition="slide">View Gallery</a>
       <a href="#booking" class="btn btn-warning w-75 my-2" data-transition="slide">Book a Trip</a>
       <a href="#login" class="btn btn-secondary w-75 my-2" data-transition="flip">Logout</a>
@@ -63,7 +64,7 @@
   <div data-role="page" id="gallery">
     <div data-role="header" class="bg-info text-white">
       <h1>Travel Destinations</h1>
-      <a href="#home" data-role="button" data-icon="home" class="ui-btn-left">Home</a>
+      <a href="#home" data-role="button" data-icon="home" data-iconpos="notext" class="ui-btn-left">Home</a>
     </div>
 
     <div data-role="content" class="p-3">
@@ -133,7 +134,6 @@
 
   <!-- ==================== JAVASCRIPT VALIDATION ==================== -->
   <script>
-    // LOGIN VALIDATION
     $("#loginForm").on("submit", function(e) {
       e.preventDefault();
       let user = $("#username").val().trim();
@@ -146,7 +146,6 @@
       }
     });
 
-    // BOOKING VALIDATION + POPUP CONFIRMATION
     $("#bookingForm").on("submit", function(e) {
       e.preventDefault();
       let name = $("#fullname").val().trim();
